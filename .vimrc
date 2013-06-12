@@ -10,3 +10,4 @@ set smartindent
 syntax on
 set showmatch
 set cursorline
+set autoindent
