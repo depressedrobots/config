@@ -11,3 +11,6 @@ syntax on
 set showmatch
 set cursorline
 set autoindent
+
+" auto-commenting
+:set formatoptions+=r
