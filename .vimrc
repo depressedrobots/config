@@ -15,3 +15,6 @@ set nowrap
 
 " auto-commenting
 :set formatoptions+=r
+
+" markdown syntax highight works only with .markdown file extension by default. add .md extension
+au BufRead,BufNewFile *.md set filetype=markdown
