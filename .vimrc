@@ -18,3 +18,6 @@ set nowrap
 
 " markdown syntax highight works only with .markdown file extension by default. add .md extension
 au BufRead,BufNewFile *.md set filetype=markdown
+
+" enable word wrapping for latex files
+autocmd BufRead,BufNewFile   *.tex setlocal wrap linebreak
