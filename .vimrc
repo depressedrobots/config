@@ -1,7 +1,5 @@
 set number
-execute pathogen#infect()
 set background=dark
-colorscheme solarized
 set tabstop=4
 set shiftwidth=4
 set smarttab
