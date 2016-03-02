@@ -37,6 +37,7 @@ set showmatch
 set cursorline
 set autoindent
 set nowrap
+set backspace=indent,eol,start	" allow backspace for other than the current insert session
 
 " auto-commenting
 :set formatoptions+=r
