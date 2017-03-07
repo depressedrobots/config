@@ -3,15 +3,16 @@
 # time and working directory + Git branch
 ########################################################################
 parse_git_branch() {
-	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
 }
 
-PS1='\[\033[01;32m\]\t \W$(parse_git_branch) $ \[\033[00m\]'
+export PS1="\t \u@\h:\[$(tput sgr0)\]\[\033[38;5;2m\][\W\[$(tput sgr0)\]\[\033[38;5;11m\]$(parse_git_branch)\[\033[38;5;2m\]]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 
 ########################################################################
 # aliases
 ########################################################################
 alias ll='ls -lGaf'
+alias g='googler -n 5'
 
 
 ########################################################################
@@ -37,5 +38,5 @@ function serve {
     ruby -run -e httpd . -p $port
 }
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="/usr/local/bash_scripts:$PATH"
+PATH="/usr/local/opt/gnupg/libexec/gpgbin:$PATH"
