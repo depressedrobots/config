@@ -6,7 +6,17 @@ parse_git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
 }
 
-export PS1="\t \u@\h:\[$(tput sgr0)\]\[\033[38;5;2m\][\W\[$(tput sgr0)\]\[\033[38;5;11m\]$(parse_git_branch)\[\033[38;5;2m\]]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+PS1=""										# reset (convenience)
+PS1="$PS1\[$(tput sgr0)\]\[\033[38;5;2m\]"	# green
+PS1="$PS1\t "									# time
+PS1="$PS1\u@\h:"							# user@host (short)
+PS1="$PS1\W"								# current dir
+PS1="$PS1\[\033[38;5;11m\]"					# yellow
+PS1="$PS1\$(parse_git_branch)"				# show current Git branch
+PS1="$PS1\[$(tput sgr0)\]\[\033[38;5;2m\]"	# green
+PS1="$PS1 \\$"								# $/#
+PS1="$PS1\[$(tput sgr0)\] "					# reset colors
+export PS1
 
 ########################################################################
 # aliases
