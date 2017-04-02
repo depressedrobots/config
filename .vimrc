@@ -39,6 +39,9 @@ set autoindent
 set nowrap
 set backspace=indent,eol,start	" allow backspace for other than the current insert session
 
+" enable line + columns display
+set ruler
+
 " auto-commenting
 :set formatoptions+=r
 
