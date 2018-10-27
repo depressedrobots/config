@@ -1,0 +1,11 @@
+---
+BreakBeforeBraces: Allman
+ColumnLimit: '120'
+FixNamespaceComments: 'true'
+IndentWidth: '4'
+NamespaceIndentation: All
+SortIncludes: 'true'
+TabWidth: '4'
+UseTab: Always
+
+...
